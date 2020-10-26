@@ -1,12 +1,11 @@
 exports.run = async (client, message, args) => {
-    const Discord = require('discord.js')
+    const { MessageEmbed } = require('discord.js')
     if (!message.channel.nsfw) return message.reply('Данный канал не NSFW!')
-    let embed = new Discord.MessageEmbed()
+    message.channel.send(new MessageEmbed()
         .setColor('#064f3b')
         .setTitle('**Рандомный хентай**')
         .setAuthor(message.author.tag, message.author.avatarURL(), message.author.url)
-        .setImage(await require('node-fetch')(`https://nekobot.xyz/api/image?type=hentai`).then(r => r.json()).then(r => r.message))
-    message.channel.send(embed)
+        .setImage(await require('node-fetch')(`https://nekobot.xyz/api/image?type=hentai`).then(r => r.json()).then(r => r.message)))
 }
 exports.help = {
     name: "hentai",
