@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message) => {
     const { MessageEmbed } = require('discord.js')
     message.channel.send(new MessageEmbed()
         .addField('Важные ссылки', `[Пригласить бота](https://discord.com/api/oauth2/authorize?client_id=576442351426207744&permissions=8&scope=bot)\n[Саппорт сервер](https://discord.gg/XuN4uhC)`)
