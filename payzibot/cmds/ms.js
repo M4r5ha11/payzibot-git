@@ -8,14 +8,14 @@ exports.run = async (client, message, args) => {
     if (r > 12) return ErrorEmbed(`количество строк не может превышать \`12\``, message);
     if (!c) return ErrorEmbed(`укажите кол-во столбцов`, message);
     if (c > 12) return ErrorEmbed(`количество столбцов не может превышать \`12\``, message);
-    if (!m)  return ErrorEmbed(`укажите кол-во мин`, message);
- 
+    if (!m)  return ErrorEmbed(`укажите кол-во мин`, message); 
     const minesweeper = new Minesweeper({ 
-rows: r,
-columns: c,
-mines: m,
-emote: 'boom',
-revealFirstCell: true});
+        rows: r,
+        columns: c,
+        mines: m,
+        emote: 'boom',
+        revealFirstCell: true
+    });
     const matrix = minesweeper.start();
     let embed = new Discord.MessageEmbed()
     .setColor('#064f3b') 
@@ -32,4 +32,4 @@ exports.help = {
   info: "game",
   usage: "ms (кол-во строк) (кол-во столбиков) (кол-во мин)",
   description: 'Мини-игра "Сапер" прямо в дискорде',
-};
+}
